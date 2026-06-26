@@ -10,7 +10,9 @@ from backend.core.dependency import get_db
 # from services.user_service import verify_registered_user
 import os
 
-os.makedirs("upload", exist_ok=True)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+upload_dir = os.path.join(current_dir, "upload")
+os.makedirs(upload_dir, exist_ok=True)
 app = FastAPI(title="Rahul")
 
 
@@ -30,7 +32,7 @@ app.add_middleware(
     allow_headers=["*"], 
 )
 
-app.mount("/upload", StaticFiles(directory="upload"), name="upload")
+app.mount("/upload", StaticFiles(directory=upload_dir), name="upload")
 
 Base.metadata.create_all(bind=engine)
 app.include_router(api_router)
