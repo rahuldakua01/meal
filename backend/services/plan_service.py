@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-from models.sunscription_plan import Plan
+from backend.models.sunscription_plan import Plan
 
 
 
@@ -43,4 +43,4 @@ def update(name,price,db:Session):
 
 
 def get_plans(db: Session):
-    return db.query(Plan).all()
+    return db.query(Plan).all()
