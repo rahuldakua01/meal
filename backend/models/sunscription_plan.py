@@ -1,4 +1,4 @@
-from db.base import Base
+from backend.db.base import Base
 from sqlalchemy import Column,String,Integer
 from sqlalchemy.orm import relationship
 
@@ -12,4 +12,4 @@ class Plan(Base):
     subscriptions = relationship(
         "Subscription",
         back_populates="plan"
-    )
+    )
