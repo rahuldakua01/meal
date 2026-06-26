@@ -1,9 +1,9 @@
 from fastapi import APIRouter,Depends
-from core.dependency import get_db
+from backend.core.dependency import get_db
 from sqlalchemy.orm import Session
-from services.subscription_service import create_subscribe
-from core.dependency import user_requird
-from schemas.subscribe import SubscriptionCreate
+from backend.services.subscription_service import create_subscribe
+from backend.core.dependency import user_requird
+from backend.schemas.subscribe import SubscriptionCreate
 
 
 
