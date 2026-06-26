@@ -1,11 +1,11 @@
 from fastapi.routing import APIRouter
-from schemas.user import RegisterUser,LoginUser
+from backend.schemas.user import RegisterUser,LoginUser
 from sqlalchemy.orm import Session
-from core.dependency import get_db, get_current_user
+from backend.core.dependency import get_db, get_current_user
 from fastapi import Depends, HTTPException
-from services.user_service import register_user,user_login
-from models.user import User
-from models.subscription import Subscription
+from backend.services.user_service import register_user,user_login
+from backend.models.user import User
+from backend.models.subscription import Subscription
 
 
 router = APIRouter()
@@ -59,4 +59,4 @@ def get_me(current_user = Depends(get_current_user), db: Session = Depends(get_d
         "role": user.role,
         "status": user.status,
         "subscription": subscription_info
-    }
+    }
