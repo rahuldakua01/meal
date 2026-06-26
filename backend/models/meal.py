@@ -1,5 +1,5 @@
 from sqlalchemy import Column,String,Integer
-from db.base import Base
+from backend.db.base import Base
 
 
 class Meal1(Base):
