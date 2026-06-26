@@ -1,6 +1,6 @@
 from datetime import datetime
 from sqlalchemy.orm import Session
-from models.meal import Meal1,Meal2,Meal3
+from backend.models.meal import Meal1,Meal2,Meal3
 
 
 def get_today_menu(db: Session):
