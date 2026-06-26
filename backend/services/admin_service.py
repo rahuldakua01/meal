@@ -1,6 +1,6 @@
-from models.user import User
+from backend.models.user import User
 from sqlalchemy.orm import Session
-from models.subscription import Subscription
+from backend.models.subscription import Subscription
 
 def get_active_users(db: Session):
     students = db.query(User).filter(User.role == "user").all()
