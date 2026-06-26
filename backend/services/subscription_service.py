@@ -1,5 +1,5 @@
-from models.subscription import Subscription
-from models.user import User
+from backend.models.subscription import Subscription
+from backend.models.user import User
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from datetime import datetime, timedelta
