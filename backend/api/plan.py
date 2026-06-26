@@ -1,9 +1,9 @@
 from fastapi import APIRouter,Form,Depends
 from sqlalchemy.orm import Session
-from core.dependency import get_db
-from services.plan_service import plan,update,get_plans
-from core.dependency import admin_requird
-from schemas.subscription_plan import PlanCreated
+from backend.core.dependency import get_db
+from backend.services.plan_service import plan,update,get_plans
+from backend.core.dependency import admin_requird
+from backend.schemas.subscription_plan import PlanCreated
 
 
 
@@ -37,4 +37,4 @@ def update_plan(
 
 @router.get("/get_plans")
 def fetch_all_plans(db:Session=Depends(get_db)):
-    return get_plans(db)
+    return get_plans(db)
