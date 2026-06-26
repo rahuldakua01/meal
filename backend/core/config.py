@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 
-# Resolve the absolute path to the .env file relative to config.py
 current_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(current_dir, "..", ".env")
 if not os.path.exists(env_path):
